@@ -1,0 +1,14 @@
+create table garments
+(gcode int,gname varchar(20),size varchar(3),colour varchar(8),
+price float);
+insert into garments values(111,'tshirt','xl','red',1200);
+insert into garments values(112,'jeans','l','blue',1600);
+insert into garments values(113,'skirt','m','black',1100);
+insert into garments values(114,'jacket','xl','blue',4000);
+insert into garments values(115,'trousers','l','brown',1500);
+insert into garments values(116,'ladiestop','l','pink',1200);
+update garments set colour='orange' where gcode=116;
+select * from garments;
+select size,count(*) from garments group by size;
+select * from garments where gname like '%s%' and price>1200;
+alter table garments add primary key (gcode);
