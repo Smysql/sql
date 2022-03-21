@@ -1,0 +1,12 @@
+create table Student (ADMNO int, NAME varchar(10), CLASS int, SEC varchar(1), RNO int, ADDRESS varchar(10), PHONE int);
+
+insert into Student values(1211, "MEENA", 12, "D", 4, "A-25", 3245678);
+insert into Student values(1212, "VANI", 10, "D", 1, "B-25", 5456789);
+insert into Student values(1213, "VEENA", 12, "A", 1, null, null);
+insert into Student values(1214, "KARISH", 10, "B", 3, "A-234", 4567890);
+
+select * from Student where PHONE is null;
+update Student
+set RNO=5 where NAME="Veena";
+select NAME, CLASS, SEC from Student order by class desc, sec;
+select SEC, count(SEC) from Student group by SEC having count(SEC)>1;

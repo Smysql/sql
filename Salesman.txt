@@ -1,0 +1,14 @@
+create table salesman
+(sno char(3),sname varchar(20),salary int,bonus float,date_of_join date);
+insert into salesman values('A01','Beena Mehta',30000,45.23,"2019-10-29");
+insert into salesman values('A02','K.L Sahay',50000,25.34,"2018-03-13");
+insert into salesman values('B03','Nisha Thakar',30000,35.00,"2019-10-29");
+insert into salesman values('B04','Leela Yadav',80000,null,"2018-12-31");
+insert into salesman values('C05','Gautam Gola',20000,null,"1989-01-23");
+insert into salesman values('B04','Trapti Garg',70000,12.37,"1987-06-15");
+select * from salesman;
+select* from salesman where bonus is null;
+select salary from salesman where sname like '%ta%';
+select sum(salary),avg(bonus) from salesman where date_of_join>"2017-01-01";
+update salesman set salary=1.1*salary where bonus is not NULL;
+select * from salesman;

@@ -1,0 +1,25 @@
+stack=[]
+def push(v):
+    stack.append(v)
+def pop():
+    if stack==[]:
+        return None
+    else:
+        v=stack.pop()
+        return v
+def pushinfo(l):
+    for i in l:
+        if i%5==0:
+            push(i)
+def popinfo():
+    while True:
+        a=pop()
+        if a==None:
+            break
+        else:
+            print(a,end=' ')
+def createlist():
+    l=map(int,input('Enter the list: ').split())
+    pushinfo(l)
+    popinfo()
+createlist()

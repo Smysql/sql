@@ -1,0 +1,17 @@
+create table customer(
+acc_no int,cust_name varchar(20),cust_city varchar(10),cust_phone varchar(10),open_bal int);
+create table transaction(
+trans_id varchar(5),acc_no int,transaction_type varchar(7),amount int);
+insert into customer values(2101001,'Sunita','Ambala',9710557614,10000);
+insert into customer values(2201002,'Sandhya','Patna',8223545223,15000);
+insert into customer values(2301003,'Vivek','New Delhi',9972136576,13000);
+insert into transaction values('Tr001',2301003,'credit',15000);
+insert into transaction values('Tr002',2201002,'credit',20000);
+insert into transaction values('Tr003',2101001,'debit',3500);
+insert into transaction values('Tr004',2301003,'credit',26000);
+select * from customer;
+select * from transaction;
+select cust_name,cust_city from customer where open_bal>10000 and open_bal<14000;
+select n.acc_no, cust_name,cust_phone,open_bal+amount from customer n natural join transaction m where transaction_type="credit";
+select transaction_type,avg(amount) from transaction group by transaction_type;
+select* from customer natural join transaction order by acc_no;

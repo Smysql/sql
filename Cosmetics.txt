@@ -1,0 +1,14 @@
+create table client(
+c_id int,clientname varchar(20),city varchar(10),P_ID varchar(4));
+create table product(
+p_id varchar(4),product_name varchar(20),manufacturer char(3),price int,discount int);
+insert into client values(01,'Cosmetic Shop','Delhi','TP01');
+insert into client values(01,'Total Health','Mumbai','FW05');
+insert into client values(03,'Live Life','Delhi','BS01');
+insert into product values('TP01','Talcum Powder','LAK',40,null);
+insert into product values('FW05','Face Wash','ABC',45,5);
+insert into product values('BS01','Bath Soap','ABC',55,null);
+select * from product where manufacturer='ABC' and price>40;
+select clientname, product_name, price from client c, product p where c.p_id=p.p_id;
+select client.* from client, product where client.p_id=product.p_id and city='Delhi' and manufacturer='ABC';
+select * from product where discount is NULL;

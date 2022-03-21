@@ -1,0 +1,26 @@
+stack=[]
+def push():
+    eno=int(input('Enter the employee no.: '))
+    ename=input('Enter the employee name: ')
+    dept=input('Enter the dept: ')
+    node=eno,ename,dept
+    stack.append(node)
+def pop():
+    if stack==[]:
+        return None
+    else:
+        v=stack.pop()
+        return v
+def menu():
+    while True:
+        print("1. Push info")
+        print("2. Pop info")
+        print("3. Exit")
+        ch=int(input('Enter your choice: '))
+        if ch==1:
+            push()
+        elif ch==2:
+            print(pop())
+        else:
+            break
+menu()
